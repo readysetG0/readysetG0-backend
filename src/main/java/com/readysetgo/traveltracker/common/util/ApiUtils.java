@@ -1,4 +1,4 @@
-package com.readysetgo.traveltracker.common.api;
+package com.readysetgo.traveltracker.common.util;
 
 import org.springframework.http.HttpStatus;
 
