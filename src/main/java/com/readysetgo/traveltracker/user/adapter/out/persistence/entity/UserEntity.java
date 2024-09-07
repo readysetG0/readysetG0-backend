@@ -1,5 +1,6 @@
 package com.readysetgo.traveltracker.user.adapter.out.persistence.entity;
 
+import com.readysetgo.traveltracker.user.domain.enumeration.SocialType;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -23,7 +24,8 @@ public class UserEntity {
     private String email;
 
     @Column(name="SOCIAL_TYPE", nullable = false)
-    private String socialType;
+    @Enumerated(EnumType.STRING)
+    private SocialType socialType;
 
     @Column(name="SOCIAL_ID", nullable = false)
     private String socialId;
