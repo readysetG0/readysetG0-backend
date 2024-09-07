@@ -20,7 +20,7 @@ public class UserEntity {
     private String name;
 
     @Column(unique = true)
-    private Long email;
+    private String email;
 
     @Column(name="SOCIAL_TYPE", nullable = false)
     private String socialType;
