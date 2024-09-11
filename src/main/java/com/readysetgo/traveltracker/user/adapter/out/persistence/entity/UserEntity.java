@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Entity
 @Getter
-@Table(name="USER", uniqueConstraints = {
+@Table(name="`USER`", uniqueConstraints = {
         @UniqueConstraint(
                 name="SOCIAL_UNIQUE",
                 columnNames={"SOCIAL_TYPE","SOCIAL_ID"}
@@ -20,7 +20,6 @@ public class UserEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(unique = true)
     private String email;
 
     @Column(name="SOCIAL_TYPE", nullable = false)
