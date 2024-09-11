@@ -1,5 +1,6 @@
 package com.readysetgo.traveltracker.user.adapter.in.web;
 
+import com.readysetgo.traveltracker.common.util.ConvertUtil;
 import com.readysetgo.traveltracker.user.adapter.in.response.UserResponse;
 import com.readysetgo.traveltracker.user.application.port.in.UserQueryUseCase;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,6 @@ public class UserQueryWebAdapter {
 
     @GetMapping(path="/{id}")
     public UserResponse find(@PathVariable String id) {
-        return new UserResponse(userQueryUseCase.find(Long.valueOf(id)));
+        return new UserResponse(userQueryUseCase.find(ConvertUtil.convertToLong(id)));
     }
 }
