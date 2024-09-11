@@ -6,6 +6,13 @@ import com.readysetgo.traveltracker.user.domain.User;
 public class UserMapper {
 
     public static User toDomain(UserEntity userEntity) {
-        return new User(userEntity.getId(), userEntity.getName(), userEntity.getEmail(), userEntity.getSocialType(), userEntity.getSocialId(), userEntity.getFcmId());
+        return User.builder()
+            .id(userEntity.getId())
+            .name(userEntity.getName())
+            .email(userEntity.getEmail())
+            .socialType(userEntity.getSocialType())
+            .socialId(userEntity.getSocialId())
+            .fcmId(userEntity.getFcmId())
+            .build();
     }
 }
