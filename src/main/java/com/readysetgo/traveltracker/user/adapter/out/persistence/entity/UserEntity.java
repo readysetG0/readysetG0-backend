@@ -19,7 +19,6 @@ public class UserEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(unique = true)
     private String email;
 
     @Column(name="SOCIAL_TYPE", nullable = false)
