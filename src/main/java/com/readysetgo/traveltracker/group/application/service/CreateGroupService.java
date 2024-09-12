@@ -16,11 +16,6 @@ public class CreateGroupService implements CreateGroupUseCase {
 
     @Override
     public void createGroup(CreateGroupCommand command) {
-        createGroupPort.createGroup(
-            command.destination(),
-            command.title(),
-            command.password(),
-            command.thumbnailUrl()
-        );
+        createGroupPort.createGroup(command);
     }
 }
