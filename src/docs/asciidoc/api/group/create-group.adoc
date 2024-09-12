@@ -1,0 +1,12 @@
+[[create-group]]
+=== 그룹 생성
+
+==== HTTP Request
+
+include::{snippets}/create-group/http-request.adoc[]
+include::{snippets}/create-group/request-fields.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/create-group/http-response.adoc[]
+include::{snippets}/create-group/response-fields.adoc[]

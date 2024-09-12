@@ -14,9 +14,11 @@ public class CreateGroupAdapter implements CreateGroupPort {
     private final GroupRepository groupRepository;
 
     @Override
-    public void createGroup(CreateGroupCommand command) {
+    public Long createGroup(CreateGroupCommand command) {
         GroupJpaEntity group = createGroupEntity(command);
         groupRepository.save(group);
+
+        return group.getId();
     }
 
     private GroupJpaEntity createGroupEntity(CreateGroupCommand command) {

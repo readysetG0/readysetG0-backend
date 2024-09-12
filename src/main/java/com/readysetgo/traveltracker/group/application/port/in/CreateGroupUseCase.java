@@ -1,6 +1,8 @@
 package com.readysetgo.traveltracker.group.application.port.in;
 
+import com.readysetgo.traveltracker.group.adapter.in.web.response.CreateGroupResponse;
+
 public interface CreateGroupUseCase {
 
-    void createGroup(CreateGroupCommand command);
+    CreateGroupResponse createGroup(CreateGroupCommand command);
 }

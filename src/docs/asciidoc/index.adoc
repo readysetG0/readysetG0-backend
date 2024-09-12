@@ -13,3 +13,4 @@ endif::[]
 == Group API
 
 include::api/group/get-group-info.adoc[]
+include::api/group/create-group.adoc[]
