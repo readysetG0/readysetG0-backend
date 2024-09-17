@@ -3,7 +3,7 @@ spring:
     default: local
 
   datasource:
-    url: jdbc:h2:mem:~/travelTrackerApplication;
+    url: jdbc:h2:mem:~/travelTrackerApplication;NON_KEYWORDS=USER
     username: sa
     password:
 
