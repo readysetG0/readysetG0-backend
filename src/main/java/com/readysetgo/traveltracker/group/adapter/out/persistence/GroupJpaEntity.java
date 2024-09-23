@@ -37,12 +37,12 @@ public class GroupJpaEntity {
 
     @Builder
     private GroupJpaEntity(
-        String destination,
-        LocalDateTime startDate,
-        LocalDateTime endDate,
-        String title,
-        String password,
-        String thumbnailUrl
+            String destination,
+            LocalDateTime startDate,
+            LocalDateTime endDate,
+            String title,
+            String password,
+            String thumbnailUrl
     ) {
         this.destination = destination;
         this.startDate = startDate;
@@ -51,5 +51,21 @@ public class GroupJpaEntity {
         this.password = password;
         this.thumbnailUrl = thumbnailUrl;
         this.isCompleted = false;
+    }
+
+    public void updateInfo(
+            String destination,
+            LocalDateTime startDate,
+            LocalDateTime endDate,
+            String title,
+            String password,
+            String thumbnailUrl
+    ) {
+        this.destination = destination;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.title = title;
+        this.password = password;
+        this.thumbnailUrl = thumbnailUrl;
     }
 }

@@ -14,7 +14,7 @@ public class DeleteGroupService implements DeleteGroupUseCase {
     private final DeleteGroupPort deleteGroupPort;
 
     @Override
-    public void deleteGroup(Long groupId) {
-        deleteGroupPort.deleteGroup(groupId);
+    public boolean deleteGroup(Long groupId) {
+        return deleteGroupPort.deleteGroup(groupId);
     }
 }
