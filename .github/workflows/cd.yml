@@ -55,8 +55,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
-            docker rmi -f ${{ secrets.DOCKER_USERNAME }}/backend
-            docker pull ${{ secrets.DOCKER_USERNAME }}/backend
-            docker stop ${{ secrets.DOCKER_USERNAME }} || true
-            docker rm ${{ secrets.DOCKER_USERNAME }} || true
-            docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/backend
+            sudo docker rmi -f ${{ secrets.DOCKER_USERNAME }}/backend
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/backend
+            sudo docker stop ${{ secrets.DOCKER_USERNAME }} || true
+            sudo docker rm ${{ secrets.DOCKER_USERNAME }} || true
+            sudo docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/backend
