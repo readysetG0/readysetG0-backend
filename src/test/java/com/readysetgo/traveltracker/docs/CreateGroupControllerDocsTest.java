@@ -4,13 +4,13 @@ import static java.time.LocalDateTime.now;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
-import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.post;
-import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessRequest;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.multipart;
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessResponse;
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
-import static org.springframework.restdocs.payload.PayloadDocumentation.requestFields;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
+import static org.springframework.restdocs.request.RequestDocumentation.partWithName;
+import static org.springframework.restdocs.request.RequestDocumentation.requestParts;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -21,6 +21,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.mock.web.MockPart;
 import org.springframework.restdocs.payload.JsonFieldType;
 
 public class CreateGroupControllerDocsTest extends RestDocsSupport {
@@ -36,8 +38,7 @@ public class CreateGroupControllerDocsTest extends RestDocsSupport {
             now(),
             now().plusDays(1),
             "즐거운 제주도 여행",
-            "1234",
-            "https://sample-image.url"
+            "1234"
         );
 
         CreateGroupResponse response = new CreateGroupResponse(1L);
@@ -46,28 +47,21 @@ public class CreateGroupControllerDocsTest extends RestDocsSupport {
             .willReturn(response);
 
         mockMvc.perform(
-                post("/v1/groups")
-                    .content(objectMapper.writeValueAsString(request))
-                    .contentType(MediaType.APPLICATION_JSON)
+                multipart("/v1/groups")
+                    .part(new MockPart(
+                        "request",
+                        "request",
+                        objectMapper.writeValueAsBytes(request),
+                        MediaType.APPLICATION_JSON))
+                    .file(new MockMultipartFile("thumbnailImage", "thumbnailImage".getBytes()))
             )
             .andDo(print())
             .andExpect(status().isOk())
             .andDo(document("create-group",
-                    preprocessRequest(prettyPrint()),
                     preprocessResponse(prettyPrint()),
-                    requestFields(
-                        fieldWithPath("destination").type(JsonFieldType.STRING)
-                            .description("목적지"),
-                        fieldWithPath("startDate").type(JsonFieldType.STRING)
-                            .description("시작 날짜"),
-                        fieldWithPath("endDate").type(JsonFieldType.STRING)
-                            .description("종료 날짜"),
-                        fieldWithPath("title").type(JsonFieldType.STRING)
-                            .description("제목"),
-                        fieldWithPath("password").type(JsonFieldType.STRING)
-                            .description("비밀번호"),
-                        fieldWithPath("thumbnailUrl").type(JsonFieldType.STRING)
-                            .description("썸네일 이미지 url")
+                    requestParts(
+                        partWithName("request").description("그룹 정보"),
+                        partWithName("thumbnailImage").description("썸네일 이미지")
                     ),
                     responseFields(
                         fieldWithPath("status").type(JsonFieldType.STRING)

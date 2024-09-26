@@ -4,7 +4,7 @@
 ==== HTTP Request
 
 include::{snippets}/create-group/http-request.adoc[]
-include::{snippets}/create-group/request-fields.adoc[]
+include::{snippets}/create-group/request-parts.adoc[]
 
 ==== HTTP Response
 
