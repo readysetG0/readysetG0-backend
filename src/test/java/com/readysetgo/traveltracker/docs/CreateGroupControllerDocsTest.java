@@ -16,6 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.readysetgo.traveltracker.group.adapter.in.web.request.CreateGroupRequest;
 import com.readysetgo.traveltracker.group.adapter.in.web.response.CreateGroupResponse;
+import com.readysetgo.traveltracker.group.application.port.in.CreateGroupCommand;
 import com.readysetgo.traveltracker.group.application.port.in.CreateGroupUseCase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ public class CreateGroupControllerDocsTest extends RestDocsSupport {
 
         CreateGroupResponse response = new CreateGroupResponse(1L);
 
-        given(createGroupUseCase.createGroup(any()))
+        given(createGroupUseCase.createGroup(any(CreateGroupCommand.class)))
             .willReturn(response);
 
         mockMvc.perform(
