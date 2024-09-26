@@ -4,12 +4,15 @@ import com.readysetgo.traveltracker.common.annotation.PersistenceAdapter;
 import com.readysetgo.traveltracker.group.adapter.out.persistence.GroupJpaEntity;
 import com.readysetgo.traveltracker.group.adapter.out.persistence.GroupRepository;
 import com.readysetgo.traveltracker.group.application.port.in.CreateGroupCommand;
+import com.readysetgo.traveltracker.group.application.port.in.UpdateGroupCommand;
 import com.readysetgo.traveltracker.group.application.port.out.CreateGroupPort;
+import com.readysetgo.traveltracker.group.application.port.out.DeleteGroupPort;
+import com.readysetgo.traveltracker.group.application.port.out.UpdateGroupPort;
 import lombok.RequiredArgsConstructor;
 
 @PersistenceAdapter
 @RequiredArgsConstructor
-public class CreateGroupAdapter implements CreateGroupPort {
+public class GroupPersistenceAdapter implements CreateGroupPort, UpdateGroupPort, DeleteGroupPort {
 
     private final GroupRepository groupRepository;
 
@@ -19,6 +22,30 @@ public class CreateGroupAdapter implements CreateGroupPort {
         groupRepository.save(group);
 
         return group.getId();
+    }
+
+    @Override
+    public boolean updateGroup(UpdateGroupCommand command) {
+        GroupJpaEntity group = groupRepository.findById(command.groupId())
+            .orElseThrow(RuntimeException::new);
+
+        group.updateInfo(
+            command.destination(),
+            command.startDate(),
+            command.endDate(),
+            command.title(),
+            command.password(),
+            command.thumbnailUrl()
+        );
+
+        return true;
+    }
+
+    @Override
+    public Boolean deleteGroup(Long groupId) {
+        groupRepository.deleteById(groupId);
+
+        return true;
     }
 
     private GroupJpaEntity createGroupEntity(CreateGroupCommand command) {

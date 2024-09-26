@@ -14,7 +14,21 @@ public record CreateGroupCommand(
     @NotNull String thumbnailUrl
 ) {
 
-    public CreateGroupCommand {
+    public CreateGroupCommand(
+        String destination,
+        LocalDateTime startDate,
+        LocalDateTime endDate,
+        String title,
+        String password,
+        String thumbnailUrl
+    ) {
+        this.destination = destination;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.title = title;
+        this.password = password;
+        this.thumbnailUrl = thumbnailUrl;
+
         validate(this);
     }
 }
