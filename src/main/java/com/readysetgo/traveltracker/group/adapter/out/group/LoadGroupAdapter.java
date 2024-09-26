@@ -1,8 +1,6 @@
-package com.readysetgo.traveltracker.group.adapter.out;
+package com.readysetgo.traveltracker.group.adapter.out.group;
 
 import com.readysetgo.traveltracker.common.annotation.PersistenceAdapter;
-import com.readysetgo.traveltracker.group.adapter.out.persistence.GroupJpaEntity;
-import com.readysetgo.traveltracker.group.adapter.out.persistence.GroupRepository;
 import com.readysetgo.traveltracker.group.application.port.out.LoadGroupPort;
 import com.readysetgo.traveltracker.group.domain.Group;
 import lombok.RequiredArgsConstructor;

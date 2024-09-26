@@ -1,12 +1,10 @@
-package com.readysetgo.traveltracker.group.adapter.out;
+package com.readysetgo.traveltracker.group.adapter.out.group;
 
 import com.readysetgo.traveltracker.common.annotation.PersistenceAdapter;
-import com.readysetgo.traveltracker.group.adapter.out.persistence.GroupJpaEntity;
-import com.readysetgo.traveltracker.group.adapter.out.persistence.GroupRepository;
-import com.readysetgo.traveltracker.group.application.port.in.CreateGroupCommand;
-import com.readysetgo.traveltracker.group.application.port.in.UpdateGroupCommand;
+import com.readysetgo.traveltracker.group.application.port.out.CreateGroupOutCommand;
 import com.readysetgo.traveltracker.group.application.port.out.CreateGroupPort;
 import com.readysetgo.traveltracker.group.application.port.out.DeleteGroupPort;
+import com.readysetgo.traveltracker.group.application.port.out.UpdateGroupOutCommand;
 import com.readysetgo.traveltracker.group.application.port.out.UpdateGroupPort;
 import lombok.RequiredArgsConstructor;
 
@@ -17,7 +15,7 @@ public class GroupPersistenceAdapter implements CreateGroupPort, UpdateGroupPort
     private final GroupRepository groupRepository;
 
     @Override
-    public Long createGroup(CreateGroupCommand command) {
+    public Long createGroup(CreateGroupOutCommand command) {
         GroupJpaEntity group = createGroupEntity(command);
         groupRepository.save(group);
 
@@ -25,7 +23,7 @@ public class GroupPersistenceAdapter implements CreateGroupPort, UpdateGroupPort
     }
 
     @Override
-    public boolean updateGroup(UpdateGroupCommand command) {
+    public boolean updateGroup(UpdateGroupOutCommand command) {
         GroupJpaEntity group = groupRepository.findById(command.groupId())
             .orElseThrow(RuntimeException::new);
 
@@ -35,7 +33,7 @@ public class GroupPersistenceAdapter implements CreateGroupPort, UpdateGroupPort
             command.endDate(),
             command.title(),
             command.password(),
-            command.thumbnailUrl()
+            command.thumbnailImageUrl()
         );
 
         return true;
@@ -48,14 +46,14 @@ public class GroupPersistenceAdapter implements CreateGroupPort, UpdateGroupPort
         return true;
     }
 
-    private GroupJpaEntity createGroupEntity(CreateGroupCommand command) {
+    private GroupJpaEntity createGroupEntity(CreateGroupOutCommand command) {
         return GroupJpaEntity.builder()
             .destination(command.destination())
             .startDate(command.startDate())
             .endDate(command.endDate())
             .title(command.title())
             .password(command.password())
-            .thumbnailUrl(command.thumbnailUrl())
+            .thumbnailUrl(command.thumbnailImageUrl())
             .build();
     }
 }

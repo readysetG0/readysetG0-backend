@@ -4,8 +4,9 @@ import static java.time.LocalDateTime.now;
 import static java.time.temporal.ChronoUnit.MILLIS;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.readysetgo.traveltracker.group.adapter.out.persistence.GroupJpaEntity;
-import com.readysetgo.traveltracker.group.adapter.out.persistence.GroupRepository;
+import com.readysetgo.traveltracker.group.adapter.out.group.GroupJpaEntity;
+import com.readysetgo.traveltracker.group.adapter.out.group.GroupRepository;
+import com.readysetgo.traveltracker.group.adapter.out.group.LoadGroupAdapter;
 import com.readysetgo.traveltracker.group.domain.Group;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;

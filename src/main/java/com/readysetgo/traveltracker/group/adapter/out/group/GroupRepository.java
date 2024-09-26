@@ -1,4 +1,4 @@
-package com.readysetgo.traveltracker.group.adapter.out.persistence;
+package com.readysetgo.traveltracker.group.adapter.out.group;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

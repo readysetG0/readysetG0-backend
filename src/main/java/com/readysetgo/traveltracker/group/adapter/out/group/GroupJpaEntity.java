@@ -1,4 +1,4 @@
-package com.readysetgo.traveltracker.group.adapter.out.persistence;
+package com.readysetgo.traveltracker.group.adapter.out.group;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,12 +37,12 @@ public class GroupJpaEntity {
 
     @Builder
     private GroupJpaEntity(
-            String destination,
-            LocalDateTime startDate,
-            LocalDateTime endDate,
-            String title,
-            String password,
-            String thumbnailUrl
+        String destination,
+        LocalDateTime startDate,
+        LocalDateTime endDate,
+        String title,
+        String password,
+        String thumbnailUrl
     ) {
         this.destination = destination;
         this.startDate = startDate;
@@ -54,12 +54,12 @@ public class GroupJpaEntity {
     }
 
     public void updateInfo(
-            String destination,
-            LocalDateTime startDate,
-            LocalDateTime endDate,
-            String title,
-            String password,
-            String thumbnailUrl
+        String destination,
+        LocalDateTime startDate,
+        LocalDateTime endDate,
+        String title,
+        String password,
+        String thumbnailUrl
     ) {
         this.destination = destination;
         this.startDate = startDate;

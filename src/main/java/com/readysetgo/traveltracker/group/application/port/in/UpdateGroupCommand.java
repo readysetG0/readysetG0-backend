@@ -2,7 +2,9 @@ package com.readysetgo.traveltracker.group.application.port.in;
 
 import static com.readysetgo.traveltracker.common.util.ValidationUtils.validate;
 
+import com.readysetgo.traveltracker.group.domain.ThumbnailImage;
 import jakarta.validation.constraints.NotNull;
+import java.io.InputStream;
 import java.time.LocalDateTime;
 
 public record UpdateGroupCommand(
@@ -12,7 +14,7 @@ public record UpdateGroupCommand(
     @NotNull LocalDateTime endDate,
     @NotNull String title,
     @NotNull String password,
-    @NotNull String thumbnailUrl
+    @NotNull ThumbnailImage thumbnailImage
 ) {
 
     public UpdateGroupCommand(
@@ -22,15 +24,19 @@ public record UpdateGroupCommand(
         LocalDateTime endDate,
         String title,
         String password,
-        String thumbnailUrl
+        String fileName,
+        String contentType,
+        InputStream imageInputStream
     ) {
-        this.groupId = groupId;
-        this.destination = destination;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.title = title;
-        this.password = password;
-        this.thumbnailUrl = thumbnailUrl;
+        this(
+            groupId,
+            destination,
+            startDate,
+            endDate,
+            title,
+            password,
+            new ThumbnailImage(fileName, contentType, imageInputStream)
+        );
 
         validate(this);
     }

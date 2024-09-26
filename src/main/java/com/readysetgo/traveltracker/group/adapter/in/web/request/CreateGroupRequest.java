@@ -7,8 +7,7 @@ public record CreateGroupRequest(
     LocalDateTime startDate,
     LocalDateTime endDate,
     String title,
-    String password,
-    String thumbnailUrl
+    String password
 ) {
 
 }
