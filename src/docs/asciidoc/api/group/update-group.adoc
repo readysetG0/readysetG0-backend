@@ -1,0 +1,12 @@
+[[update-group]]
+=== 그룹 수정
+
+==== HTTP Request
+
+include::{snippets}/update-group/http-request.adoc[]
+include::{snippets}/update-group/request-parts.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/update-group/http-response.adoc[]
+include::{snippets}/update-group/response-fields.adoc[]

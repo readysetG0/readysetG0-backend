@@ -12,5 +12,7 @@ endif::[]
 [[group-API]]
 == Group API
 
-include::api/group/get-group-info.adoc[]
 include::api/group/create-group.adoc[]
+include::api/group/get-group-info.adoc[]
+include::api/group/update-group.adoc[]
+include::api/group/delete-group.adoc[]
