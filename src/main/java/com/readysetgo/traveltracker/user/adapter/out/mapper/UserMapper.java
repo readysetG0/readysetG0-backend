@@ -3,7 +3,7 @@ package com.readysetgo.traveltracker.user.adapter.out.mapper;
 import com.readysetgo.traveltracker.user.adapter.out.persistence.entity.UserEntity;
 import com.readysetgo.traveltracker.user.domain.User;
 
-public class UserMapper {
+public abstract class UserMapper {
 
     public static User toDomain(UserEntity userEntity) {
         return User.builder()
