@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Entity
 @Getter
-@Table(name="`USER`", uniqueConstraints = {
+@Table(name="USER", uniqueConstraints = {
         @UniqueConstraint(
                 name="SOCIAL_UNIQUE",
                 columnNames={"SOCIAL_TYPE","SOCIAL_ID"}
