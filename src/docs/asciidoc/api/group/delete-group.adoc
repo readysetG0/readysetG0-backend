@@ -1,0 +1,11 @@
+[[delete-group]]
+=== 그룹 삭제
+
+==== HTTP Request
+
+include::{snippets}/delete-group/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/delete-group/http-response.adoc[]
+include::{snippets}/delete-group/response-fields.adoc[]
