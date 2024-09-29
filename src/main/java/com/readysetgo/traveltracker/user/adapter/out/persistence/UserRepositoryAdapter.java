@@ -8,8 +8,6 @@ import com.readysetgo.traveltracker.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
 @Repository
 @RequiredArgsConstructor
 public class UserRepositoryAdapter implements UserPort {
@@ -18,11 +16,9 @@ public class UserRepositoryAdapter implements UserPort {
 
     @Override
     public User find(Long id) {
-        Optional<UserEntity> userOptional = userRepository.findById(id);
         //Todo 커스텀 exception 수정 필요
-        if (!userOptional.isPresent()) {
-            throw new RuntimeException("not exist user");
-        }
-        return UserMapper.toDomain(userOptional.get());
+        UserEntity userEntity = userRepository.findById(id).orElseThrow(() -> new RuntimeException("not exist user"));
+
+        return UserMapper.toDomain(userEntity);
     }
 }
