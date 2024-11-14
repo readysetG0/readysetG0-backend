@@ -1,0 +1,11 @@
+[[get-marker-info]]
+=== 마커 정보 조회
+
+==== HTTP Request
+
+include::{snippets}/get-marker/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/get-marker/http-response.adoc[]
+include::{snippets}/get-marker/response-fields.adoc[]

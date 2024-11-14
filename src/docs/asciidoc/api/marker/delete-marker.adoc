@@ -1,0 +1,11 @@
+[[delete-marker]]
+=== 마커 삭제
+
+==== HTTP Request
+
+include::{snippets}/delete-marker/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/delete-marker/http-response.adoc[]
+include::{snippets}/delete-marker/response-fields.adoc[]
