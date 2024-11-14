@@ -48,6 +48,8 @@ dependencies {
 	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
 	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
 
+	implementation 'org.aspectj:aspectjweaver:1.9.22.1'
+
 	//Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -70,6 +72,8 @@ test {
 		systemProperty 'spring.profiles.active', 'test'
 	}
 
+	jvmArgs += "-javaagent:${configurations.runtimeClasspath.find { it.name.contains('aspectjweaver') }}"
+
 	useJUnitPlatform()
 }
 
@@ -89,6 +93,10 @@ bootJar {
 	from("${asciidoctor.outputDir}") {
 		into 'static/docs'
 	}
+}
+
+bootRun {
+	jvmArgs += "-javaagent:${configurations.runtimeClasspath.find { it.name.contains('aspectjweaver') }}"
 }
 
 clean {

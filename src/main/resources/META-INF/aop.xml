@@ -1,0 +1,9 @@
+<aspectj>
+  <aspects>
+    <aspect name="com.readysetgo.traveltracker.common.annotation.ValidationAspect"/>
+  </aspects>
+  <weaver options="-Xlint:ignore">
+    <!-- 적용할 패키지 설정 -->
+    <include within="com.readysetgo.traveltracker..*"/>
+  </weaver>
+</aspectj>
