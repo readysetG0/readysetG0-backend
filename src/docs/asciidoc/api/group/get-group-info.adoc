@@ -1,0 +1,11 @@
+[[get-group-info]]
+=== 그룹 정보 조회
+
+==== HTTP Request
+
+include::{snippets}/get-group-info/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/get-group-info/http-response.adoc[]
+include::{snippets}/get-group-info/response-fields.adoc[]
