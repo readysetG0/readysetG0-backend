@@ -1,0 +1,12 @@
+[[update-marker]]
+=== 마커 수정
+
+==== HTTP Request
+
+include::{snippets}/update-marker/http-request.adoc[]
+include::{snippets}/update-marker/request-fields.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/update-marker/http-response.adoc[]
+include::{snippets}/update-marker/response-fields.adoc[]
