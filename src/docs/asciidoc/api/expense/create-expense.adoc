@@ -1,0 +1,11 @@
+[[create-expense]]
+=== 비용 생성
+
+==== HTTP Request
+
+include::{snippets}/create-expense/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/create-expense/http-response.adoc[]
+include::{snippets}/create-expense/response-fields.adoc[]

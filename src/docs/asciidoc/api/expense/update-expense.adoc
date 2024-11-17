@@ -1,0 +1,12 @@
+[[update-expense]]
+=== 비용 수정
+
+==== HTTP Request
+
+include::{snippets}/update-expense/http-request.adoc[]
+include::{snippets}/update-expense/request-fields.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/update-expense/http-response.adoc[]
+include::{snippets}/update-expense/response-fields.adoc[]
