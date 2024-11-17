@@ -1,0 +1,11 @@
+[[get-debtor-info]]
+=== 채무자 정보 조회
+
+==== HTTP Request
+
+include::{snippets}/get-debtor/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/get-debtor/http-response.adoc[]
+include::{snippets}/get-debtor/response-fields.adoc[]

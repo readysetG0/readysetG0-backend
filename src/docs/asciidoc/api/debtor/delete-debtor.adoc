@@ -1,0 +1,11 @@
+[[delete-debtor]]
+=== 채무자 삭제
+
+==== HTTP Request
+
+include::{snippets}/delete-debtor/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/delete-debtor/http-response.adoc[]
+include::{snippets}/delete-debtor/response-fields.adoc[]

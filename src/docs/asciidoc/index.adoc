@@ -16,3 +16,10 @@ include::api/group/create-group.adoc[]
 include::api/group/get-group-info.adoc[]
 include::api/group/update-group.adoc[]
 include::api/group/delete-group.adoc[]
+
+[[debtor-API]]
+== Debtor API
+
+include::api/debtor/create-debtor.adoc[]
+include::api/debtor/get-debtor-info.adoc[]
+include::api/debtor/delete-debtor.adoc[]
