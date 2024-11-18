@@ -1,0 +1,11 @@
+[[delete-expense]]
+=== 비용 삭제
+
+==== HTTP Request
+
+include::{snippets}/delete-expense/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/delete-expense/http-response.adoc[]
+include::{snippets}/delete-expense/response-fields.adoc[]

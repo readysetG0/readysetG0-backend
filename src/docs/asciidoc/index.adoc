@@ -16,3 +16,13 @@ include::api/group/create-group.adoc[]
 include::api/group/get-group-info.adoc[]
 include::api/group/update-group.adoc[]
 include::api/group/delete-group.adoc[]
+
+[[expense-API]]
+== Expense API
+
+include::api/expense/create-expense.adoc[]
+include::api/expense/get-expense-info.adoc[]
+include::api/expense/update-expense.adoc[]
+include::api/expense/delete-expense.adoc[]
+
+``

@@ -1,0 +1,11 @@
+[[get-expense-info]]
+=== 비용 정보 조회
+
+==== HTTP Request
+
+include::{snippets}/get-expense/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/get-expense/http-response.adoc[]
+include::{snippets}/get-expense/response-fields.adoc[]
