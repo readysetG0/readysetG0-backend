@@ -16,3 +16,10 @@ include::api/group/create-group.adoc[]
 include::api/group/get-group-info.adoc[]
 include::api/group/update-group.adoc[]
 include::api/group/delete-group.adoc[]
+
+[[category-API]]
+== Category API
+
+include::api/category/create-category.adoc[]
+include::api/category/get-category-info.adoc[]
+include::api/category/delete-category.adoc[]

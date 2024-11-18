@@ -1,0 +1,12 @@
+[[create-category]]
+=== 카테고리 생성
+
+==== HTTP Request
+
+include::{snippets}/create-category/http-request.adoc[]
+include::{snippets}/create-category/request-fields.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/create-category/http-response.adoc[]
+include::{snippets}/create-category/response-fields.adoc[]

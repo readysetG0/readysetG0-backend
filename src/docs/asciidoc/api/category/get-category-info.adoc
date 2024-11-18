@@ -1,0 +1,11 @@
+[[get-category]]
+=== 카테고리 정보 조회
+
+==== HTTP Request
+
+include::{snippets}/get-category/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/get-category/http-response.adoc[]
+include::{snippets}/get-category/response-fields.adoc[]
