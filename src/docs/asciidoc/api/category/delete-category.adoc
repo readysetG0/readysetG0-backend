@@ -1,0 +1,11 @@
+[[delete-category]]
+=== 카테고리 삭제
+
+==== HTTP Request
+
+include::{snippets}/delete-category/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/delete-category/http-response.adoc[]
+include::{snippets}/delete-category/response-fields.adoc[]
