@@ -1,0 +1,11 @@
+[[create-marker]]
+=== 마커 생성
+
+==== HTTP Request
+
+include::{snippets}/create-marker/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/create-marker/http-response.adoc[]
+include::{snippets}/create-marker/response-fields.adoc[]

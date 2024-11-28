@@ -16,3 +16,11 @@ include::api/group/create-group.adoc[]
 include::api/group/get-group-info.adoc[]
 include::api/group/update-group.adoc[]
 include::api/group/delete-group.adoc[]
+
+[[marker-API]]
+== Marker API
+
+include::api/marker/create-marker.adoc[]
+include::api/marker/get-marker-info.adoc[]
+include::api/marker/update-marker.adoc[]
+include::api/marker/delete-marker.adoc[]
