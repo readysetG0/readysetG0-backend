@@ -1,0 +1,11 @@
+[[create-debtor]]
+=== 채무자 생성
+
+==== HTTP Request
+
+include::{snippets}/create-debtor/http-request.adoc[]
+
+==== HTTP Response
+
+include::{snippets}/create-debtor/http-response.adoc[]
+include::{snippets}/create-debtor/response-fields.adoc[]
